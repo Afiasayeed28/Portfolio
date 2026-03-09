@@ -335,6 +335,11 @@
   .showcase-card:hover::before { opacity: 1; }
 
   .showcase-img-wrap { width: 100%; aspect-ratio: 16/9; overflow: hidden; background: var(--bg-secondary); position: relative; }
+  /* Fallback gradient when image fails */
+  .showcase-img-fallback { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; padding: 2rem; text-align: center; }
+  .sif-badge { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 2px; text-transform: uppercase; border: 1px solid; padding: 0.3rem 0.9rem; }
+  .sif-title { font-family: var(--font-display); font-size: clamp(1.1rem, 3vw, 1.8rem); font-weight: 700; color: #fff; letter-spacing: -0.5px; max-width: 480px; line-height: 1.3; }
+  .sif-deco { position: absolute; bottom: -40px; right: -40px; width: 220px; height: 220px; border-radius: 50%; pointer-events: none; }
   .showcase-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block; }
   .showcase-card:hover .showcase-img-wrap img { transform: scale(1.03); }
   .showcase-img-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,10,11,0.75) 0%, transparent 55%); pointer-events: none; }
@@ -386,13 +391,14 @@
   <ul class="nav-links" id="navLinks">
     <li><a href="#about">About</a></li>
     <li><a href="#experience">Experience</a></li>
-    <li><a href="#projects">Projects</a></li>
-    <li><a href="#education">Education</a></li>
-    <li><a href="#tech-skills">Tech Skills</a></li>
-    <li><a href="#soft-skills">Soft Skills</a></li>
-    <li><a href="#awards">Awards</a></li>
-    <li><a href="#languages">Languages</a></li>
     <li><a href="#work-showcase">Work</a></li>
+    <li><a href="#work-process">Process</a></li>
+    <li><a href="#how-i-work">How I Work</a></li>
+    <li><a href="#tech-skills">Tools</a></li>
+    <li><a href="#projects">Projects</a></li>
+    <li><a href="#awards">Awards</a></li>
+    <li><a href="#education">Education</a></li>
+    <li><a href="#languages">Languages</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" onclick="document.getElementById('navLinks').classList.toggle('show')">
@@ -523,6 +529,297 @@
   </div>
 </section>
 
+<!-- ═══════════ WORK SHOWCASE ═══════════ -->
+<section id="work-showcase">
+  <div class="reveal">
+    <div class="section-label">Portfolio</div>
+    <h2 class="section-title">Work Showcase</h2>
+    <p class="section-subtitle">A selection of e-learning courses I've designed and developed — click to explore each one.</p>
+  </div>
+  <div class="reveal">
+    <div class="showcase-carousel-wrapper">
+      <div class="showcase-track" id="showcaseTrack">
+        <!-- Slide 01 -->
+        <div class="showcase-slide">
+          <div class="showcase-card">
+            <div class="showcase-img-wrap">
+              <img src="images/collage1.jpg" alt="Best Practices for Customer Care course preview"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+              <div class="showcase-img-fallback" style="display:none;background:linear-gradient(135deg, #1a0533 0%, #2d1b69 40%, #4a2c8f 70%, #6b3fa0 100%);">
+                <div class="sif-badge" style="color:#a78bfa;border-color:#a78bfa;">Customer Service</div>
+                <div class="sif-title">Best Practices for Customer Care</div>
+                <div class="sif-deco" style="background:#a78bfa;opacity:0.15;"></div>
+              </div>
+              <div class="showcase-img-overlay"></div>
+            </div>
+            <div class="showcase-body">
+              <div class="showcase-meta">
+                <div class="showcase-num">01</div>
+                <div class="showcase-type">E-Learning Course</div>
+                <h3 class="showcase-title">Best Practices for Customer Care</h3>
+              </div>
+              <a href="https://360.articulate.com/review/content/f6ba8c6e-5d60-49e2-a479-d04c15244cda/review" target="_blank" rel="noopener noreferrer" class="showcase-view-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Course
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 02 -->
+        <div class="showcase-slide">
+          <div class="showcase-card">
+            <div class="showcase-img-wrap">
+              <img src="images/collage2.jpg" alt="Client Data Protection course preview"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+              <div class="showcase-img-fallback" style="display:none;background:linear-gradient(135deg, #0a1628 0%, #0d3460 40%, #1565c0 70%, #0097a7 100%);">
+                <div class="sif-badge" style="color:#38bdf8;border-color:#38bdf8;">Compliance</div>
+                <div class="sif-title">Client Data Protection</div>
+                <div class="sif-deco" style="background:#38bdf8;opacity:0.15;"></div>
+              </div>
+              <div class="showcase-img-overlay"></div>
+            </div>
+            <div class="showcase-body">
+              <div class="showcase-meta">
+                <div class="showcase-num">02</div>
+                <div class="showcase-type">E-Learning Course</div>
+                <h3 class="showcase-title">Client Data Protection</h3>
+              </div>
+              <a href="https://360.articulate.com/review/content/e2fef490-6eaa-4eef-8865-2bb9f1e7320d/review" target="_blank" rel="noopener noreferrer" class="showcase-view-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Course
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 03 -->
+        <div class="showcase-slide">
+          <div class="showcase-card">
+            <div class="showcase-img-wrap">
+              <img src="images/collage3.jpg" alt="Diversity and Inclusion course preview"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+              <div class="showcase-img-fallback" style="display:none;background:linear-gradient(135deg, #7c1d06 0%, #c0392b 40%, #e64a19 70%, #ff8f00 100%);">
+                <div class="sif-badge" style="color:#fb923c;border-color:#fb923c;">Culture</div>
+                <div class="sif-title">Diversity and Inclusion</div>
+                <div class="sif-deco" style="background:#fb923c;opacity:0.15;"></div>
+              </div>
+              <div class="showcase-img-overlay"></div>
+            </div>
+            <div class="showcase-body">
+              <div class="showcase-meta">
+                <div class="showcase-num">03</div>
+                <div class="showcase-type">E-Learning Course</div>
+                <h3 class="showcase-title">Diversity and Inclusion</h3>
+              </div>
+              <a href="https://360.articulate.com/review/content/d55dc834-d574-49f2-b6b8-f35b961dec95/review" target="_blank" rel="noopener noreferrer" class="showcase-view-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Course
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 04 -->
+        <div class="showcase-slide">
+          <div class="showcase-card">
+            <div class="showcase-img-wrap">
+              <img src="images/collage4.jpg" alt="Data Privacy course preview"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+              <div class="showcase-img-fallback" style="display:none;background:linear-gradient(135deg, #0d0d2b 0%, #1a237e 40%, #283593 70%, #7c4dff 100%);">
+                <div class="sif-badge" style="color:#818cf8;border-color:#818cf8;">Compliance</div>
+                <div class="sif-title">Data Privacy</div>
+                <div class="sif-deco" style="background:#818cf8;opacity:0.15;"></div>
+              </div>
+              <div class="showcase-img-overlay"></div>
+            </div>
+            <div class="showcase-body">
+              <div class="showcase-meta">
+                <div class="showcase-num">04</div>
+                <div class="showcase-type">E-Learning Course</div>
+                <h3 class="showcase-title">Data Privacy</h3>
+              </div>
+              <a href="https://360.articulate.com/review/content/a6098c57-774f-4321-b74f-979e3f4236f1/review" target="_blank" rel="noopener noreferrer" class="showcase-view-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Course
+              </a>
+            </div>
+          </div>
+        </div>
+        <!-- Slide 05 -->
+        <div class="showcase-slide">
+          <div class="showcase-card">
+            <div class="showcase-img-wrap">
+              <img src="images/collage5.jpg" alt="Anti-Money Laundering course preview"
+                onerror="this.style.display='none';this.nextElementSibling.style.display='flex';" />
+              <div class="showcase-img-fallback" style="display:none;background:linear-gradient(135deg, #111111 0%, #1c1c1c 40%, #2a2a2a 70%, #3d3000 100%);">
+                <div class="sif-badge" style="color:#f5c518;border-color:#f5c518;">Finance & Compliance</div>
+                <div class="sif-title">Anti-Money Laundering</div>
+                <div class="sif-deco" style="background:#f5c518;opacity:0.15;"></div>
+              </div>
+              <div class="showcase-img-overlay"></div>
+            </div>
+            <div class="showcase-body">
+              <div class="showcase-meta">
+                <div class="showcase-num">05</div>
+                <div class="showcase-type">E-Learning Course</div>
+                <h3 class="showcase-title">Anti-Money Laundering</h3>
+              </div>
+              <a href="https://360.articulate.com/review/content/c4aa7604-c5df-4cd2-bd42-1e06f8a029e2/review" target="_blank" rel="noopener noreferrer" class="showcase-view-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Course
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /track -->
+    </div><!-- /wrapper -->
+
+    <div class="carousel-controls">
+      <button class="carousel-btn" id="showcasePrev" onclick="showcaseMove(-1)" aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="carousel-dots" id="showcaseDots"></div>
+      <button class="carousel-btn" id="showcaseNext" onclick="showcaseMove(1)" aria-label="Next slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <span class="carousel-counter" id="showcaseCounter">1 / 5</span>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ LEADERSHIP ═══════════ -->
+<section id="work-process" class="alt-bg">
+  <div class="reveal">
+    <div class="section-label">Work Process</div>
+    <h2 class="section-title">My Work Process</h2>
+  </div>
+  <div class="leadership-top reveal">
+    <div class="leadership-philosophy">
+      <p>As an L&D manager, I orchestrate a multidisciplinary team of 14 across the full lifecycle of emotion-centric learning experiences for global clients.</p>
+      <p>We start from scratch — connecting with clients, understanding their training needs, creating TNAs from conversations, brainstorming with SMEs, and building comprehensive project plans. My IDs own their courses while graphic designers craft mood boards and visual systems, and QAs ensure every deliverable meets the bar.</p>
+      <div class="leadership-quote">"Corporate training shouldn't be a chore. It should be an experience people remember."</div>
+    </div>
+  </div>
+  <div class="reveal">
+    <div class="section-label" style="margin-top:2rem;">Our Process</div>
+    <div class="process-steps">
+      <div class="process-step"><div class="step-num">01</div><h4>Discovery & TNA</h4><p>Connect with global clients and SMEs to uncover training needs, audience profiles, and business goals.</p></div>
+      <div class="process-step"><div class="step-num">02</div><h4>Strategy & Planning</h4><p>Define objectives, timelines, modalities, work groups, and build a comprehensive project plan.</p></div>
+      <div class="process-step"><div class="step-num">03</div><h4>Design & Develop</h4><p>Storyboards, mood boards, curriculum — IDs and graphic designers working in parallel.</p></div>
+      <div class="process-step"><div class="step-num">04</div><h4>QA & Delivery</h4><p>Rigorous quality checks by QAs, ID fixes, client reviews, and polished final delivery.</p></div>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ SOFT SKILLS ═══════════ -->
+<section id="how-i-work">
+  <div class="reveal">
+    <div class="section-label">Soft Skills</div>
+    <h2 class="section-title">How I Work</h2>
+    <p class="section-subtitle">The human capabilities that make the technical skills land — how I think, communicate, and lead.</p>
+  </div>
+  <div class="soft-skills-grid reveal">
+    <div class="soft-skill-card">
+      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
+      <h4>Eye for Detail</h4>
+      <p>Pixel-level precision in course design, ensuring every interaction, transition, and visual element meets the highest quality standards.</p>
+    </div>
+    <div class="soft-skill-card">
+      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg></div>
+      <h4>Strategic Thinking</h4>
+      <p>Connecting business objectives to learning outcomes — designing training that serves both the learner and the organization's goals.</p>
+    </div>
+    <div class="soft-skill-card">
+      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
+      <h4>Communication & Presentation</h4>
+      <p>Articulating complex ideas to stakeholders, SMEs, and team members with clarity and confidence — from boardroom to brainstorm.</p>
+    </div>
+    <div class="soft-skill-card">
+      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
+      <h4>Operational Agility</h4>
+      <p>Thriving in fast-paced, deadline-driven environments while managing multiple projects and shifting priorities simultaneously.</p>
+    </div>
+    <div class="soft-skill-card">
+      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
+      <h4>Quick Learner</h4>
+      <p>Rapidly absorbing new tools, domains, and processes — from SAP Fiori to Dynamics 365 to emerging AI platforms.</p>
+    </div>
+    <div class="soft-skill-card">
+      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
+      <h4>Emotional Intelligence</h4>
+      <p>Understanding learner emotions and team dynamics to create experiences that resonate and environments where people do their best work.</p>
+    </div>
+    <div class="soft-skill-card">
+      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="14" rx="1"/><line x1="12" y1="16" x2="12" y2="21"/><line x1="7" y1="21" x2="17" y2="21"/><line x1="6" y1="7" x2="18" y2="7"/><line x1="6" y1="11" x2="13" y2="11"/></svg></div>
+      <h4>Training & Demonstration</h4>
+      <p>Designing and delivering train-the-trainer programs, facilitator guides, and live demonstrations that empower others to teach effectively.</p>
+    </div>
+    <div class="soft-skill-card">
+      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1" fill="currentColor" stroke="none"/><circle cx="17.5" cy="10.5" r="1" fill="currentColor" stroke="none"/><circle cx="8.5" cy="7.5" r="1" fill="currentColor" stroke="none"/><circle cx="6.5" cy="12.5" r="1" fill="currentColor" stroke="none"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
+      <h4>Analytical Design Thinking</h4>
+      <p>Approaching every project with a blend of creative vision and analytical rigor — thinking outside the box while staying grounded in data and outcomes.</p>
+    </div>
+    <div class="soft-skill-card">
+      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
+      <h4>Critical Thinking</h4>
+      <p>Evaluating information objectively, questioning assumptions, and making sound decisions that balance learner needs with business constraints.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ═══════════ TECHNICAL SKILLS ═══════════ -->
+<section id="tech-skills" class="alt-bg">
+  <div class="reveal">
+    <div class="section-label">Technical Skills</div>
+    <h2 class="section-title">Tools & Technologies</h2>
+    <p class="section-subtitle">The authoring platforms, design tools, and AI technologies I use to build world-class learning experiences.</p>
+  </div>
+  <div class="skills-two-col reveal">
+      <div class="skill-category">
+        <h4>Authoring & Course Development</h4>
+        <div class="skill-items">
+          <span class="skill-item featured">Articulate Storyline 360</span>
+          <span class="skill-item featured">Articulate Rise 360</span>
+          <span class="skill-item">Articulate 360 Suite</span>
+          <span class="skill-item">Adobe Captivate</span>
+          <span class="skill-item">SAP Enable Now</span>
+          <span class="skill-item">WalkMe</span>
+          <span class="skill-item">Camtasia</span>
+          <span class="skill-item">Easygenerator</span>
+          <span class="skill-item">Synthesia.io</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h4>Design & Visual Tools</h4>
+        <div class="skill-items">
+          <span class="skill-item featured">Figma</span>
+          <span class="skill-item">Adobe Creative Suite</span>
+          <span class="skill-item">Adobe Illustrator</span>
+          <span class="skill-item">Adobe Photoshop</span>
+          <span class="skill-item">Canva</span>
+          <span class="skill-item">Microsoft Paint</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h4>Collaboration & Planning</h4>
+        <div class="skill-items">
+          <span class="skill-item">Miro</span>
+          <span class="skill-item">Mural</span>
+          <span class="skill-item">Microsoft PowerPoint</span>
+          <span class="skill-item">Microsoft Excel</span>
+        </div>
+      </div>
+      <div class="skill-category">
+        <h4>AI & Emerging Tech</h4>
+        <div class="skill-items">
+          <span class="skill-item">Midjourney</span>
+          <span class="skill-item">Google Gemini AI</span>
+          <span class="skill-item">Microsoft Copilot</span>
+          <span class="skill-item">ChatGPT</span>
+        </div>
+      </div>
+  </div>
+</section>
+
 <!-- ═══════════ PROJECTS ═══════════ -->
 <section id="projects" class="alt-bg">
   <div class="reveal">
@@ -621,6 +918,21 @@
   </div>
 </section>
 
+<!-- ═══════════ AWARDS ═══════════ -->
+<section id="awards" class="alt-bg">
+  <div class="reveal">
+    <div class="section-label">Recognition</div>
+    <h2 class="section-title">Awards</h2>
+    <p class="section-subtitle">Recognition for going above and beyond — stepping into complex projects and delivering excellence from day one.</p>
+  </div>
+  <div class="award-card reveal">
+    <div class="award-icon">★</div>
+    <h3>Spot Award</h3>
+    <div class="award-org">EY GDS · Excellence in Project Delivery</div>
+    <p>Awarded the Spot Award by EY GDS for joining a complex, high-stakes project and handling it excellently in a remarkably short timeframe. This recognition was given for demonstrating exceptional adaptability, taking ownership from day one, and delivering quality outputs under tight deadlines — proving the ability to ramp up fast and make an immediate impact on client-facing work.</p>
+  </div>
+</section>
+
 <!-- ═══════════ EDUCATION ═══════════ -->
 <section id="education">
   <div class="reveal">
@@ -641,131 +953,6 @@
       <div class="edu-school">Dayananda Sagar College of Engineering</div>
       <div class="edu-year">Graduated July 2017 · GPA: 6.0</div>
     </div>
-  </div>
-</section>
-
-<!-- ═══════════ TECHNICAL SKILLS ═══════════ -->
-<section id="tech-skills" class="alt-bg">
-  <div class="reveal">
-    <div class="section-label">Technical Skills</div>
-    <h2 class="section-title">Tools & Technologies</h2>
-    <p class="section-subtitle">The authoring platforms, design tools, and AI technologies I use to build world-class learning experiences.</p>
-  </div>
-  <div class="skills-two-col reveal">
-      <div class="skill-category">
-        <h4>Authoring & Course Development</h4>
-        <div class="skill-items">
-          <span class="skill-item featured">Articulate Storyline 360</span>
-          <span class="skill-item featured">Articulate Rise 360</span>
-          <span class="skill-item">Articulate 360 Suite</span>
-          <span class="skill-item">Adobe Captivate</span>
-          <span class="skill-item">SAP Enable Now</span>
-          <span class="skill-item">WalkMe</span>
-          <span class="skill-item">Camtasia</span>
-          <span class="skill-item">Easygenerator</span>
-          <span class="skill-item">Synthesia.io</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h4>Design & Visual Tools</h4>
-        <div class="skill-items">
-          <span class="skill-item featured">Figma</span>
-          <span class="skill-item">Adobe Creative Suite</span>
-          <span class="skill-item">Adobe Illustrator</span>
-          <span class="skill-item">Adobe Photoshop</span>
-          <span class="skill-item">Canva</span>
-          <span class="skill-item">Microsoft Paint</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h4>Collaboration & Planning</h4>
-        <div class="skill-items">
-          <span class="skill-item">Miro</span>
-          <span class="skill-item">Mural</span>
-          <span class="skill-item">Microsoft PowerPoint</span>
-          <span class="skill-item">Microsoft Excel</span>
-        </div>
-      </div>
-      <div class="skill-category">
-        <h4>AI & Emerging Tech</h4>
-        <div class="skill-items">
-          <span class="skill-item">Midjourney</span>
-          <span class="skill-item">Google Gemini AI</span>
-          <span class="skill-item">Microsoft Copilot</span>
-          <span class="skill-item">ChatGPT</span>
-        </div>
-      </div>
-  </div>
-</section>
-
-<!-- ═══════════ SOFT SKILLS ═══════════ -->
-<section id="soft-skills">
-  <div class="reveal">
-    <div class="section-label">Soft Skills</div>
-    <h2 class="section-title">How I Work</h2>
-    <p class="section-subtitle">The human capabilities that make the technical skills land — how I think, communicate, and lead.</p>
-  </div>
-  <div class="soft-skills-grid reveal">
-    <div class="soft-skill-card">
-      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
-      <h4>Eye for Detail</h4>
-      <p>Pixel-level precision in course design, ensuring every interaction, transition, and visual element meets the highest quality standards.</p>
-    </div>
-    <div class="soft-skill-card">
-      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg></div>
-      <h4>Strategic Thinking</h4>
-      <p>Connecting business objectives to learning outcomes — designing training that serves both the learner and the organization's goals.</p>
-    </div>
-    <div class="soft-skill-card">
-      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
-      <h4>Communication & Presentation</h4>
-      <p>Articulating complex ideas to stakeholders, SMEs, and team members with clarity and confidence — from boardroom to brainstorm.</p>
-    </div>
-    <div class="soft-skill-card">
-      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
-      <h4>Operational Agility</h4>
-      <p>Thriving in fast-paced, deadline-driven environments while managing multiple projects and shifting priorities simultaneously.</p>
-    </div>
-    <div class="soft-skill-card">
-      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
-      <h4>Quick Learner</h4>
-      <p>Rapidly absorbing new tools, domains, and processes — from SAP Fiori to Dynamics 365 to emerging AI platforms.</p>
-    </div>
-    <div class="soft-skill-card">
-      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
-      <h4>Emotional Intelligence</h4>
-      <p>Understanding learner emotions and team dynamics to create experiences that resonate and environments where people do their best work.</p>
-    </div>
-    <div class="soft-skill-card">
-      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="14" rx="1"/><line x1="12" y1="16" x2="12" y2="21"/><line x1="7" y1="21" x2="17" y2="21"/><line x1="6" y1="7" x2="18" y2="7"/><line x1="6" y1="11" x2="13" y2="11"/></svg></div>
-      <h4>Training & Demonstration</h4>
-      <p>Designing and delivering train-the-trainer programs, facilitator guides, and live demonstrations that empower others to teach effectively.</p>
-    </div>
-    <div class="soft-skill-card">
-      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1" fill="currentColor" stroke="none"/><circle cx="17.5" cy="10.5" r="1" fill="currentColor" stroke="none"/><circle cx="8.5" cy="7.5" r="1" fill="currentColor" stroke="none"/><circle cx="6.5" cy="12.5" r="1" fill="currentColor" stroke="none"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
-      <h4>Analytical Design Thinking</h4>
-      <p>Approaching every project with a blend of creative vision and analytical rigor — thinking outside the box while staying grounded in data and outcomes.</p>
-    </div>
-    <div class="soft-skill-card">
-      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
-      <h4>Critical Thinking</h4>
-      <p>Evaluating information objectively, questioning assumptions, and making sound decisions that balance learner needs with business constraints.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ AWARDS ═══════════ -->
-<section id="awards" class="alt-bg">
-  <div class="reveal">
-    <div class="section-label">Recognition</div>
-    <h2 class="section-title">Awards</h2>
-    <p class="section-subtitle">Recognition for going above and beyond — stepping into complex projects and delivering excellence from day one.</p>
-  </div>
-  <div class="award-card reveal">
-    <div class="award-icon">★</div>
-    <h3>Spot Award</h3>
-    <div class="award-org">EY GDS · Excellence in Project Delivery</div>
-    <p>Awarded the Spot Award by EY GDS for joining a complex, high-stakes project and handling it excellently in a remarkably short timeframe. This recognition was given for demonstrating exceptional adaptability, taking ownership from day one, and delivering quality outputs under tight deadlines — proving the ability to ramp up fast and make an immediate impact on client-facing work.</p>
   </div>
 </section>
 
@@ -791,120 +978,6 @@
       <div class="lang-name">Hindi</div>
       <div class="lang-level">Upper Intermediate (B2)</div>
       <div class="lang-bar-outer"><div class="lang-bar-inner" style="width:75%"></div></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ LEADERSHIP ═══════════ -->
-<section class="alt-bg">
-  <div class="reveal">
-    <div class="section-label">Work Process</div>
-    <h2 class="section-title">My Work Process</h2>
-  </div>
-  <div class="leadership-top reveal">
-    <div class="leadership-philosophy">
-      <p>As an L&D manager, I orchestrate a multidisciplinary team of 14 across the full lifecycle of emotion-centric learning experiences for global clients.</p>
-      <p>We start from scratch — connecting with clients, understanding their training needs, creating TNAs from conversations, brainstorming with SMEs, and building comprehensive project plans. My IDs own their courses while graphic designers craft mood boards and visual systems, and QAs ensure every deliverable meets the bar.</p>
-      <div class="leadership-quote">"Corporate training shouldn't be a chore. It should be an experience people remember."</div>
-    </div>
-  </div>
-  <div class="reveal">
-    <div class="section-label" style="margin-top:2rem;">Our Process</div>
-    <div class="process-steps">
-      <div class="process-step"><div class="step-num">01</div><h4>Discovery & TNA</h4><p>Connect with global clients and SMEs to uncover training needs, audience profiles, and business goals.</p></div>
-      <div class="process-step"><div class="step-num">02</div><h4>Strategy & Planning</h4><p>Define objectives, timelines, modalities, work groups, and build a comprehensive project plan.</p></div>
-      <div class="process-step"><div class="step-num">03</div><h4>Design & Develop</h4><p>Storyboards, mood boards, curriculum — IDs and graphic designers working in parallel.</p></div>
-      <div class="process-step"><div class="step-num">04</div><h4>QA & Delivery</h4><p>Rigorous quality checks by QAs, ID fixes, client reviews, and polished final delivery.</p></div>
-    </div>
-  </div>
-</section>
-
-<!-- ═══════════ WORK SHOWCASE ═══════════ -->
-<section id="work-showcase" class="alt-bg">
-  <div class="reveal">
-    <div class="section-label">Portfolio</div>
-    <h2 class="section-title">Work Showcase</h2>
-    <p class="section-subtitle">A selection of e-learning courses I've designed and developed — click to explore each one.</p>
-  </div>
-  <div class="reveal">
-    <div class="showcase-carousel-wrapper">
-      <div class="showcase-track" id="showcaseTrack">
-
-        <!-- Slide 1 -->
-        <div class="showcase-slide">
-          <div class="showcase-card">
-            <div class="showcase-img-wrap">
-              <img src="images/collage1.jpg" alt="Best Practices for Customer Care course preview" />
-              <div class="showcase-img-overlay"></div>
-            </div>
-            <div class="showcase-body">
-              <div class="showcase-meta">
-                <div class="showcase-num">01</div>
-                <div class="showcase-type">E-Learning Course</div>
-                <h3 class="showcase-title">Best Practices for Customer Care</h3>
-              </div>
-              <a href="https://360.articulate.com/review/content/f6ba8c6e-5d60-49e2-a479-d04c15244cda/review" target="_blank" rel="noopener noreferrer" class="showcase-view-btn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                View Course
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 2 -->
-        <div class="showcase-slide">
-          <div class="showcase-card">
-            <div class="showcase-img-wrap">
-              <img src="images/collage2.jpg" alt="Client Data Protection course preview" />
-              <div class="showcase-img-overlay"></div>
-            </div>
-            <div class="showcase-body">
-              <div class="showcase-meta">
-                <div class="showcase-num">02</div>
-                <div class="showcase-type">E-Learning Course</div>
-                <h3 class="showcase-title">Client Data Protection</h3>
-              </div>
-              <a href="https://360.articulate.com/review/content/e2fef490-6eaa-4eef-8865-2bb9f1e7320d/review" target="_blank" rel="noopener noreferrer" class="showcase-view-btn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                View Course
-              </a>
-            </div>
-          </div>
-        </div>
-
-        <!-- Slide 3 -->
-        <div class="showcase-slide">
-          <div class="showcase-card">
-            <div class="showcase-img-wrap">
-              <img src="images/collage3.jpg" alt="Diversity and Inclusion course preview" />
-              <div class="showcase-img-overlay"></div>
-            </div>
-            <div class="showcase-body">
-              <div class="showcase-meta">
-                <div class="showcase-num">03</div>
-                <div class="showcase-type">E-Learning Course</div>
-                <h3 class="showcase-title">Diversity and Inclusion</h3>
-              </div>
-              <a href="https://360.articulate.com/review/content/d55dc834-d574-49f2-b6b8-f35b961dec95/review" target="_blank" rel="noopener noreferrer" class="showcase-view-btn">
-                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                View Course
-              </a>
-            </div>
-          </div>
-        </div>
-
-      </div><!-- /track -->
-    </div><!-- /wrapper -->
-
-    <div class="carousel-controls">
-      <button class="carousel-btn" id="showcasePrev" onclick="showcaseMove(-1)" aria-label="Previous slide">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
-      </button>
-      <div class="carousel-dots" id="showcaseDots"></div>
-      <button class="carousel-btn" id="showcaseNext" onclick="showcaseMove(1)" aria-label="Next slide">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
-      </button>
-      <span class="carousel-counter" id="showcaseCounter">1 / 3</span>
     </div>
   </div>
 </section>
@@ -994,7 +1067,7 @@
 
   // Work Showcase Carousel
   (function() {
-    const total = 3;
+    const total = 5;
     let cur = 0;
     const track = document.getElementById('showcaseTrack');
     const dotsContainer = document.getElementById('showcaseDots');
