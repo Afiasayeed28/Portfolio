@@ -84,7 +84,7 @@
   .hero-content { max-width: 900px; position: relative; z-index: 1; }
   .hero-tag { font-family: var(--font-mono); font-size: 0.7rem; letter-spacing: 3px; text-transform: uppercase; color: var(--accent); margin-bottom: 1.5rem; display: flex; align-items: center; gap: 0.75rem; animation: fadeInUp 0.8s ease both 0.2s; }
   .hero-tag::before { content: ''; width: 40px; height: 1px; background: var(--accent); }
-  .hero h1 { font-family: var(--font-display); font-size: clamp(3rem, 6.5vw, 5.5rem); font-weight: 800; line-height: 1.05; letter-spacing: -2px; margin-bottom: 1.5rem; animation: fadeInUp 0.8s ease both 0.4s; }
+  .hero h1 { font-family: var(--font-display); font-size: clamp(3rem, 6.5vw, 5.5rem); font-weight: 800; line-height: 1.2; letter-spacing: -2px; margin-bottom: 1.5rem; padding-bottom: 0.15em; animation: fadeInUp 0.8s ease both 0.4s; }
   .hero h1 .highlight { color: var(--accent); }
   .hero-desc { font-size: 1.15rem; color: var(--text-secondary); max-width: 580px; line-height: 1.75; margin-bottom: 2.5rem; font-weight: 300; animation: fadeInUp 0.8s ease both 0.6s; }
   .hero-ctas { display: flex; gap: 1rem; align-items: center; animation: fadeInUp 0.8s ease both 0.8s; }
@@ -94,9 +94,9 @@
   @keyframes fadeInUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }
 
   /* ── ABOUT ── */
-  .about-grid { display: grid; grid-template-columns: 0.8fr 1.2fr; gap: 5rem; align-items: center; max-width: 1200px; }
-  .about-image-wrapper { position: relative; }
-  .about-image { width: 100%; aspect-ratio: 4/5; border: 1px solid var(--border); overflow: hidden; position: relative; }
+  .about-grid { display: grid; grid-template-columns: 0.42fr 1.58fr; gap: 3.5rem; align-items: center; max-width: 1200px; }
+  .about-image-wrapper { position: relative; max-width: 260px; }
+  .about-image { width: 100%; aspect-ratio: 4/5; border: 1.5px solid var(--accent); overflow: hidden; position: relative; }
   .about-image img { width: 100%; height: 100%; object-fit: cover; object-position: center top; display: block; }
   .about-image::after { content: ''; position: absolute; inset: 0; background: linear-gradient(135deg, var(--accent-glow), transparent 50%); pointer-events: none; }
   .about-image-wrapper::after { content: ''; position: absolute; top: 16px; left: 16px; right: -16px; bottom: -16px; border: 1px solid var(--accent-dim); opacity: 0.3; z-index: -1; }
@@ -174,18 +174,12 @@
   .skill-item:hover { color: var(--accent); border-color: var(--accent-dim); background: var(--accent-glow); }
   .skill-item.featured { border-color: var(--accent-dim); color: var(--accent); background: var(--accent-glow); font-weight: 500; }
 
-  .bar-row { margin-bottom: 1.25rem; }
-  .bar-header { display: flex; justify-content: space-between; margin-bottom: 0.4rem; }
-  .bar-label { font-size: 0.88rem; font-weight: 500; }
-  .bar-pct { font-family: var(--font-mono); font-size: 0.72rem; color: var(--accent); }
-  .bar-track { width: 100%; height: 4px; background: var(--border-light); overflow: hidden; }
-  .bar-fill { height: 100%; background: linear-gradient(90deg, var(--accent-dim), var(--accent)); transition: width 1.5s ease; }
-
   /* ── SOFT SKILLS ── */
   .soft-skills-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 1.5rem; max-width: 1200px; }
   .soft-skill-card { padding: 2rem; background: var(--bg-card); border: 1px solid var(--border-light); transition: all 0.3s ease; position: relative; }
   .soft-skill-card:hover { border-color: var(--accent-dim); transform: translateY(-3px); }
-  .soft-skill-card .ss-icon { font-size: 1.6rem; margin-bottom: 1rem; }
+  .soft-skill-card .ss-icon { width: 28px; height: 28px; margin-bottom: 1.25rem; color: var(--accent); display: flex; align-items: center; }
+  .soft-skill-card .ss-icon svg { width: 28px; height: 28px; }
   .soft-skill-card h4 { font-family: var(--font-display); font-size: 1.05rem; font-weight: 700; margin-bottom: 0.5rem; }
   .soft-skill-card p { font-size: 0.85rem; color: var(--text-secondary); line-height: 1.6; font-weight: 300; }
 
@@ -206,17 +200,28 @@
   .lang-bar-outer { width: 80%; height: 4px; background: var(--border-light); margin: 0 auto; overflow: hidden; }
   .lang-bar-inner { height: 100%; background: linear-gradient(90deg, var(--accent-dim), var(--accent)); transition: width 1.5s ease; }
 
-  /* ── LEADERSHIP ── */
-  .leadership-top { display: grid; grid-template-columns: 1.3fr 1fr; gap: 5rem; margin-bottom: 4rem; max-width: 1200px; }
+  /* ── LEADERSHIP / WORK PROCESS ── */
+  .leadership-top { max-width: 900px; margin-bottom: 4rem; }
   .leadership-philosophy p { color: var(--text-secondary); line-height: 1.8; font-weight: 300; margin-bottom: 1rem; }
   .leadership-quote { font-family: var(--font-display); font-size: 1.45rem; font-weight: 600; line-height: 1.4; color: var(--text-primary); border-left: 3px solid var(--accent); padding-left: 1.5rem; margin: 2rem 0; }
-  .team-breakdown { display: flex; flex-direction: column; gap: 1.25rem; }
-  .team-breakdown h4 { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 3px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 0.5rem; }
-  .team-role { display: flex; justify-content: space-between; align-items: center; padding: 1.15rem 1.5rem; background: var(--bg-card); border: 1px solid var(--border-light); transition: all 0.3s ease; }
-  .team-role:hover { border-color: var(--accent-dim); transform: translateX(4px); }
-  .team-role .role-name { font-weight: 500; font-size: 0.95rem; }
-  .team-role .role-count { font-family: var(--font-display); font-weight: 800; font-size: 1.4rem; color: var(--accent); }
   .process-steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1.5rem; max-width: 1200px; }
+
+  /* ── CONTACT MODAL ── */
+  .contact-modal-overlay { position: fixed; inset: 0; background: rgba(10,10,11,0.88); backdrop-filter: blur(10px); z-index: 2000; display: flex; align-items: center; justify-content: center; opacity: 0; pointer-events: none; transition: opacity 0.3s ease; padding: 1rem; }
+  .contact-modal-overlay.open { opacity: 1; pointer-events: all; }
+  .contact-modal { background: var(--bg-card); border: 1px solid var(--border); max-width: 420px; width: 100%; padding: 2.5rem; position: relative; box-shadow: 0 40px 80px rgba(0,0,0,0.6); animation: revealIn 0.3s ease both; }
+  .contact-modal-close { position: absolute; top: 1.25rem; right: 1.25rem; background: none; border: 1px solid var(--border-light); color: var(--text-muted); cursor: pointer; font-size: 0.85rem; width: 28px; height: 28px; display: flex; align-items: center; justify-content: center; transition: all 0.3s; }
+  .contact-modal-close:hover { color: var(--accent); border-color: var(--accent-dim); }
+  .contact-modal-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; margin-bottom: 0.35rem; }
+  .contact-modal-sub { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); margin-bottom: 2rem; }
+  .contact-item { display: flex; align-items: center; gap: 1rem; padding: 1rem 0; border-bottom: 1px solid var(--border-light); text-decoration: none; color: var(--text-primary); transition: color 0.3s; }
+  .contact-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .contact-item:hover { color: var(--accent); }
+  .contact-item .ci-icon { width: 20px; height: 20px; flex-shrink: 0; color: var(--accent); }
+  .contact-item .ci-icon svg { width: 20px; height: 20px; }
+  .contact-item .ci-text { display: flex; flex-direction: column; gap: 0.15rem; }
+  .contact-item .ci-label { font-family: var(--font-mono); font-size: 0.53rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); }
+  .contact-item .ci-value { font-size: 0.93rem; font-weight: 500; }
   .process-step { padding: 2rem; background: var(--bg-card); border: 1px solid var(--border-light); transition: all 0.3s ease; }
   .process-step:hover { border-color: var(--accent-dim); transform: translateY(-3px); }
   .process-step .step-num { font-family: var(--font-display); font-size: 2rem; font-weight: 800; color: var(--border); margin-bottom: 1rem; }
@@ -236,6 +241,11 @@
   .footer-links a { font-family: var(--font-mono); font-size: 0.62rem; letter-spacing: 2px; text-transform: uppercase; color: var(--text-muted); text-decoration: none; transition: color 0.3s; }
   .footer-links a:hover { color: var(--accent); }
 
+  /* ── OVERFLOW GUARD ── */
+  section { overflow-x: hidden; }
+  .about-grid > *, .projects-grid > *, .skills-two-col > *, .soft-skills-grid > *,
+  .edu-grid > *, .lang-grid > *, .process-steps > * { min-width: 0; }
+
   /* ── GRAIN ── */
   body::after { content: ''; position: fixed; inset: 0; background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='0.03'/%3E%3C/svg%3E"); pointer-events: none; z-index: 9999; }
 
@@ -252,13 +262,14 @@
     section { padding: 5rem 1.5rem; }
     .hero { padding: 7rem 1.5rem 3rem; }
     .about-grid { grid-template-columns: 1fr; gap: 2.5rem; }
-    .about-image-wrapper::after { display: none; } /* hide offset-border that leaks on mobile */
+    .about-image-wrapper { max-width: 240px; margin: 0 auto; }
+    .about-image-wrapper::after { display: none; }
     .projects-grid { grid-template-columns: 1fr; }
     .project-card-full { grid-template-columns: 1fr; }
     .project-card-full .pf-left { border-right: none; border-bottom: 1px solid var(--border-light); }
-    .leadership-top { grid-template-columns: 1fr; gap: 2.5rem; }
+    .leadership-top { margin-bottom: 2.5rem; }
     .process-steps { grid-template-columns: 1fr 1fr; }
-    .skills-two-col { grid-template-columns: 1fr; }
+    .skills-two-col { grid-template-columns: 1fr 1fr; gap: 2rem; }
     .edu-grid { grid-template-columns: 1fr; }
     .lang-grid { grid-template-columns: 1fr 1fr; }
     .hero-stats { gap: 2rem; flex-wrap: wrap; }
@@ -266,6 +277,7 @@
     .footer-links { flex-wrap: wrap; justify-content: center; }
     .soft-skills-grid { grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); }
     .award-card { max-width: 100%; }
+    .contact-modal { padding: 2rem; }
   }
   @media (max-width: 600px) {
     .process-steps { grid-template-columns: 1fr; }
@@ -274,6 +286,8 @@
     .outcomes-row { flex-wrap: wrap; }
     .lang-grid { grid-template-columns: 1fr; }
     .footer-links { gap: 1rem; }
+    .skills-two-col { grid-template-columns: 1fr; }
+    .about-image-wrapper { max-width: 200px; }
   }
   /* ── SMALL PHONES ── */
   @media (max-width: 480px) {
@@ -585,7 +599,6 @@
     <p class="section-subtitle">The authoring platforms, design tools, and AI technologies I use to build world-class learning experiences.</p>
   </div>
   <div class="skills-two-col reveal">
-    <div>
       <div class="skill-category">
         <h4>Authoring & Course Development</h4>
         <div class="skill-items">
@@ -629,18 +642,6 @@
           <span class="skill-item">ChatGPT</span>
         </div>
       </div>
-    </div>
-    <div>
-      <div class="bar-row"><div class="bar-header"><span class="bar-label">Articulate Storyline 360</span><span class="bar-pct">95%</span></div><div class="bar-track"><div class="bar-fill" style="width:95%"></div></div></div>
-      <div class="bar-row"><div class="bar-header"><span class="bar-label">Articulate Rise 360</span><span class="bar-pct">92%</span></div><div class="bar-track"><div class="bar-fill" style="width:92%"></div></div></div>
-      <div class="bar-row"><div class="bar-header"><span class="bar-label">Figma</span><span class="bar-pct">88%</span></div><div class="bar-track"><div class="bar-fill" style="width:88%"></div></div></div>
-      <div class="bar-row"><div class="bar-header"><span class="bar-label">Adobe Creative Suite</span><span class="bar-pct">85%</span></div><div class="bar-track"><div class="bar-fill" style="width:85%"></div></div></div>
-      <div class="bar-row"><div class="bar-header"><span class="bar-label">SAP Enable Now / WalkMe</span><span class="bar-pct">85%</span></div><div class="bar-track"><div class="bar-fill" style="width:85%"></div></div></div>
-      <div class="bar-row"><div class="bar-header"><span class="bar-label">Synthesia / AI Video</span><span class="bar-pct">80%</span></div><div class="bar-track"><div class="bar-fill" style="width:80%"></div></div></div>
-      <div class="bar-row"><div class="bar-header"><span class="bar-label">Camtasia</span><span class="bar-pct">82%</span></div><div class="bar-track"><div class="bar-fill" style="width:82%"></div></div></div>
-      <div class="bar-row"><div class="bar-header"><span class="bar-label">AI Tools (Midjourney, Copilot, Gemini)</span><span class="bar-pct">78%</span></div><div class="bar-track"><div class="bar-fill" style="width:78%"></div></div></div>
-      <div class="bar-row"><div class="bar-header"><span class="bar-label">Miro / Mural</span><span class="bar-pct">85%</span></div><div class="bar-track"><div class="bar-fill" style="width:85%"></div></div></div>
-    </div>
   </div>
 </section>
 
@@ -653,47 +654,47 @@
   </div>
   <div class="soft-skills-grid reveal">
     <div class="soft-skill-card">
-      <div class="ss-icon">◎</div>
+      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M1 12s4-8 11-8 11 8 11 8-4 8-11 8-11-8-11-8z"/><circle cx="12" cy="12" r="3"/></svg></div>
       <h4>Eye for Detail</h4>
       <p>Pixel-level precision in course design, ensuring every interaction, transition, and visual element meets the highest quality standards.</p>
     </div>
     <div class="soft-skill-card">
-      <div class="ss-icon">◈</div>
+      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><line x1="9" y1="18" x2="15" y2="18"/><line x1="10" y1="22" x2="14" y2="22"/><path d="M15.09 14c.18-.98.65-1.74 1.41-2.5A4.65 4.65 0 0 0 18 8 6 6 0 0 0 6 8c0 1 .23 2.23 1.5 3.5A4.61 4.61 0 0 1 8.91 14"/></svg></div>
       <h4>Strategic Thinking</h4>
       <p>Connecting business objectives to learning outcomes — designing training that serves both the learner and the organization's goals.</p>
     </div>
     <div class="soft-skill-card">
-      <div class="ss-icon">◉</div>
+      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/></svg></div>
       <h4>Communication & Presentation</h4>
       <p>Articulating complex ideas to stakeholders, SMEs, and team members with clarity and confidence — from boardroom to brainstorm.</p>
     </div>
     <div class="soft-skill-card">
-      <div class="ss-icon">⟐</div>
+      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="3"/><path d="M19.4 15a1.65 1.65 0 0 0 .33 1.82l.06.06a2 2 0 0 1-2.83 2.83l-.06-.06a1.65 1.65 0 0 0-1.82-.33 1.65 1.65 0 0 0-1 1.51V21a2 2 0 0 1-4 0v-.09A1.65 1.65 0 0 0 9 19.4a1.65 1.65 0 0 0-1.82.33l-.06.06a2 2 0 0 1-2.83-2.83l.06-.06A1.65 1.65 0 0 0 4.68 15a1.65 1.65 0 0 0-1.51-1H3a2 2 0 0 1 0-4h.09A1.65 1.65 0 0 0 4.6 9a1.65 1.65 0 0 0-.33-1.82l-.06-.06a2 2 0 0 1 2.83-2.83l.06.06A1.65 1.65 0 0 0 9 4.68a1.65 1.65 0 0 0 1-1.51V3a2 2 0 0 1 4 0v.09a1.65 1.65 0 0 0 1 1.51 1.65 1.65 0 0 0 1.82-.33l.06-.06a2 2 0 0 1 2.83 2.83l-.06.06A1.65 1.65 0 0 0 19.4 9a1.65 1.65 0 0 0 1.51 1H21a2 2 0 0 1 0 4h-.09a1.65 1.65 0 0 0-1.51 1z"/></svg></div>
       <h4>Operational Agility</h4>
       <p>Thriving in fast-paced, deadline-driven environments while managing multiple projects and shifting priorities simultaneously.</p>
     </div>
     <div class="soft-skill-card">
-      <div class="ss-icon">↗</div>
+      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/></svg></div>
       <h4>Quick Learner</h4>
       <p>Rapidly absorbing new tools, domains, and processes — from SAP Fiori to Dynamics 365 to emerging AI platforms.</p>
     </div>
     <div class="soft-skill-card">
-      <div class="ss-icon">♡</div>
+      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"/></svg></div>
       <h4>Emotional Intelligence</h4>
       <p>Understanding learner emotions and team dynamics to create experiences that resonate and environments where people do their best work.</p>
     </div>
     <div class="soft-skill-card">
-      <div class="ss-icon">▣</div>
+      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="14" rx="1"/><line x1="12" y1="16" x2="12" y2="21"/><line x1="7" y1="21" x2="17" y2="21"/><line x1="6" y1="7" x2="18" y2="7"/><line x1="6" y1="11" x2="13" y2="11"/></svg></div>
       <h4>Training & Demonstration</h4>
       <p>Designing and delivering train-the-trainer programs, facilitator guides, and live demonstrations that empower others to teach effectively.</p>
     </div>
     <div class="soft-skill-card">
-      <div class="ss-icon">◇</div>
+      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><circle cx="13.5" cy="6.5" r="1" fill="currentColor" stroke="none"/><circle cx="17.5" cy="10.5" r="1" fill="currentColor" stroke="none"/><circle cx="8.5" cy="7.5" r="1" fill="currentColor" stroke="none"/><circle cx="6.5" cy="12.5" r="1" fill="currentColor" stroke="none"/><path d="M12 2C6.5 2 2 6.5 2 12s4.5 10 10 10c.926 0 1.648-.746 1.648-1.688 0-.437-.18-.835-.437-1.125-.29-.289-.438-.652-.438-1.125a1.64 1.64 0 0 1 1.668-1.668h1.996c3.051 0 5.555-2.503 5.555-5.554C21.965 6.012 17.461 2 12 2z"/></svg></div>
       <h4>Analytical Design Thinking</h4>
       <p>Approaching every project with a blend of creative vision and analytical rigor — thinking outside the box while staying grounded in data and outcomes.</p>
     </div>
     <div class="soft-skill-card">
-      <div class="ss-icon">⊕</div>
+      <div class="ss-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M10.29 3.86L1.82 18a2 2 0 0 0 1.71 3h16.94a2 2 0 0 0 1.71-3L13.71 3.86a2 2 0 0 0-3.42 0z"/><line x1="12" y1="9" x2="12" y2="13"/><line x1="12" y1="17" x2="12.01" y2="17"/></svg></div>
       <h4>Critical Thinking</h4>
       <p>Evaluating information objectively, questioning assumptions, and making sound decisions that balance learner needs with business constraints.</p>
     </div>
@@ -744,21 +745,14 @@
 <!-- ═══════════ LEADERSHIP ═══════════ -->
 <section class="alt-bg">
   <div class="reveal">
-    <div class="section-label">Leadership</div>
-    <h2 class="section-title">Building & Leading Creative Teams</h2>
+    <div class="section-label">Work Process</div>
+    <h2 class="section-title">My Work Process</h2>
   </div>
   <div class="leadership-top reveal">
     <div class="leadership-philosophy">
-      <p>As Assistant Manager (L&D) at EY GDS, I orchestrate a multidisciplinary team of 14 across the full lifecycle of emotion-centric learning experiences for global clients.</p>
+      <p>As an L&D manager, I orchestrate a multidisciplinary team of 14 across the full lifecycle of emotion-centric learning experiences for global clients.</p>
       <p>We start from scratch — connecting with clients, understanding their training needs, creating TNAs from conversations, brainstorming with SMEs, and building comprehensive project plans. My IDs own their courses while graphic designers craft mood boards and visual systems, and QAs ensure every deliverable meets the bar.</p>
       <div class="leadership-quote">"Corporate training shouldn't be a chore. It should be an experience people remember."</div>
-    </div>
-    <div class="team-breakdown">
-      <h4>Team Composition</h4>
-      <div class="team-role"><span class="role-name">Instructional Designers</span><span class="role-count">10</span></div>
-      <div class="team-role"><span class="role-name">Graphic Designers</span><span class="role-count">02</span></div>
-      <div class="team-role"><span class="role-name">Quality Analysts</span><span class="role-count">02</span></div>
-      <div class="team-role" style="border-color: var(--accent-dim); background: var(--accent-soft);"><span class="role-name" style="color: var(--accent); font-weight: 600;">Total Team</span><span class="role-count">14</span></div>
     </div>
   </div>
   <div class="reveal">
@@ -777,17 +771,46 @@
   <div class="footer-cta">
     <h2>Let's build something<br/><span>meaningful together.</span></h2>
     <p>Open to freelance projects, consulting, and collaboration opportunities.</p>
-    <a href="/cdn-cgi/l/email-protection#6615071f03030207000f0726010b070f0a4805090b" class="btn-primary">Say Hello</a>
+    <button onclick="openContactModal()" class="btn-primary">Say Hello</button>
   </div>
   <div class="footer-bottom">
     <div class="footer-name">Afia Sayeed<span>.</span></div>
     <div class="footer-links">
-      <a href="/cdn-cgi/l/email-protection#4437253d21212025222d25042329252d286a272b29">Email</a>
+      <a href="mailto:sayeedafia@gmail.com">Email</a>
       <a href="https://in.linkedin.com/in/afia-sayeed-563b10b1" target="_blank">LinkedIn</a>
-
     </div>
   </div>
 </footer>
+
+<!-- ── CONTACT MODAL ── -->
+<div class="contact-modal-overlay" id="contactModal" onclick="if(event.target===this)closeContactModal()">
+  <div class="contact-modal" role="dialog" aria-modal="true" aria-label="Contact Information">
+    <button class="contact-modal-close" onclick="closeContactModal()" aria-label="Close">✕</button>
+    <div class="contact-modal-title">Get In Touch</div>
+    <div class="contact-modal-sub">Say hello — I'd love to connect</div>
+    <a href="mailto:sayeedafia@gmail.com" class="contact-item">
+      <span class="ci-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg></span>
+      <div class="ci-text">
+        <span class="ci-label">Email</span>
+        <span class="ci-value">sayeedafia@gmail.com</span>
+      </div>
+    </a>
+    <a href="tel:+918660080645" class="contact-item">
+      <span class="ci-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.61 3.33 2 2 0 0 1 3.6 1h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L7.91 8.6a16 16 0 0 0 6 6l.95-.95a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg></span>
+      <div class="ci-text">
+        <span class="ci-label">Phone</span>
+        <span class="ci-value">+91 8660080645</span>
+      </div>
+    </a>
+    <a href="https://in.linkedin.com/in/afia-sayeed-563b10b1" target="_blank" class="contact-item">
+      <span class="ci-icon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></span>
+      <div class="ci-text">
+        <span class="ci-label">LinkedIn</span>
+        <span class="ci-value">afia-sayeed-563b10b1</span>
+      </div>
+    </a>
+  </div>
+</div>
 
 <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
   // Scroll reveal
@@ -814,6 +837,17 @@
 
   // Close mobile nav on link click
   document.querySelectorAll('.nav-links a').forEach(a => { a.addEventListener('click', () => { document.getElementById('navLinks').classList.remove('show'); }); });
+
+  // Contact modal
+  function openContactModal() {
+    document.getElementById('contactModal').classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeContactModal() {
+    document.getElementById('contactModal').classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  document.addEventListener('keydown', e => { if (e.key === 'Escape') closeContactModal(); });
 </script>
 </body>
 </html>
