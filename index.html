@@ -324,6 +324,58 @@
     .btn-primary, .btn-ghost { padding: 0.75rem 1.25rem; font-size: 0.6rem; }
     footer { padding: 2.5rem 0.75rem; }
   }
+
+  /* ── WORK SHOWCASE CAROUSEL ── */
+  .showcase-carousel-wrapper { position: relative; max-width: 1100px; overflow: hidden; }
+  .showcase-track { display: flex; transition: transform 0.55s cubic-bezier(0.4,0,0.2,1); will-change: transform; }
+  .showcase-slide { min-width: 100%; padding: 0 0.25rem; box-sizing: border-box; }
+  .showcase-card { background: var(--bg-card); border: 1px solid var(--border-light); overflow: hidden; position: relative; transition: all 0.4s ease; }
+  .showcase-card:hover { border-color: var(--accent-dim); box-shadow: 0 24px 60px rgba(0,0,0,0.35); }
+  .showcase-card::before { content: ''; position: absolute; top: 0; left: 0; width: 100%; height: 3px; background: linear-gradient(90deg, var(--accent), var(--accent-dim), transparent); opacity: 0; transition: opacity 0.4s ease; }
+  .showcase-card:hover::before { opacity: 1; }
+
+  .showcase-img-wrap { width: 100%; aspect-ratio: 16/9; overflow: hidden; background: var(--bg-secondary); position: relative; }
+  .showcase-img-wrap img { width: 100%; height: 100%; object-fit: cover; transition: transform 0.5s ease; display: block; }
+  .showcase-card:hover .showcase-img-wrap img { transform: scale(1.03); }
+  .showcase-img-overlay { position: absolute; inset: 0; background: linear-gradient(to top, rgba(10,10,11,0.75) 0%, transparent 55%); pointer-events: none; }
+
+  .showcase-body { padding: 2rem 2.5rem 2.5rem; display: flex; justify-content: space-between; align-items: center; gap: 1.5rem; }
+  .showcase-meta {}
+  .showcase-num { font-family: var(--font-display); font-size: 2.5rem; font-weight: 800; color: var(--border); line-height: 1; margin-bottom: 0.6rem; transition: color 0.3s; }
+  .showcase-card:hover .showcase-num { color: var(--accent-dim); }
+  .showcase-title { font-family: var(--font-display); font-size: 1.4rem; font-weight: 700; letter-spacing: -0.5px; margin-bottom: 0.35rem; }
+  .showcase-type { font-family: var(--font-mono); font-size: 0.58rem; letter-spacing: 2px; text-transform: uppercase; color: var(--accent); }
+
+  .showcase-view-btn {
+    font-family: var(--font-mono); font-size: 0.65rem; letter-spacing: 2px; text-transform: uppercase;
+    background: var(--accent); color: var(--bg-primary); padding: 0.85rem 1.6rem;
+    text-decoration: none; font-weight: 700; white-space: nowrap; flex-shrink: 0;
+    transition: all 0.3s ease; display: inline-flex; align-items: center; gap: 0.5rem;
+    border: none;
+  }
+  .showcase-view-btn:hover { background: var(--text-primary); transform: translateY(-2px); box-shadow: 0 8px 30px rgba(232,168,56,0.25); }
+  .showcase-view-btn svg { width: 14px; height: 14px; flex-shrink: 0; }
+
+  .carousel-controls { display: flex; align-items: center; gap: 1.25rem; margin-top: 2rem; }
+  .carousel-btn { width: 44px; height: 44px; background: var(--bg-card); border: 1px solid var(--border-light); color: var(--text-secondary); cursor: pointer; display: flex; align-items: center; justify-content: center; transition: all 0.3s ease; flex-shrink: 0; }
+  .carousel-btn:hover { background: var(--accent); color: var(--bg-primary); border-color: var(--accent); }
+  .carousel-btn svg { width: 18px; height: 18px; }
+  .carousel-btn:disabled { opacity: 0.3; cursor: not-allowed; }
+  .carousel-btn:disabled:hover { background: var(--bg-card); color: var(--text-secondary); border-color: var(--border-light); }
+  .carousel-dots { display: flex; gap: 0.6rem; align-items: center; }
+  .carousel-dot { width: 8px; height: 8px; background: var(--border); cursor: pointer; transition: all 0.3s ease; border: none; }
+  .carousel-dot.active { background: var(--accent); width: 24px; }
+  .carousel-counter { font-family: var(--font-mono); font-size: 0.6rem; letter-spacing: 2px; color: var(--text-muted); margin-left: auto; }
+
+  @media (max-width: 900px) {
+    .showcase-body { padding: 1.5rem 1.75rem 2rem; flex-direction: column; align-items: flex-start; }
+    .showcase-view-btn { align-self: stretch; justify-content: center; }
+  }
+  @media (max-width: 480px) {
+    .showcase-body { padding: 1.25rem 1.25rem 1.5rem; }
+    .showcase-title { font-size: 1.15rem; }
+    .showcase-num { font-size: 2rem; }
+  }
 </style>
 </head>
 <body>
@@ -340,6 +392,7 @@
     <li><a href="#soft-skills">Soft Skills</a></li>
     <li><a href="#awards">Awards</a></li>
     <li><a href="#languages">Languages</a></li>
+    <li><a href="#work-showcase">Work</a></li>
     <li><a href="#contact">Contact</a></li>
   </ul>
   <button class="nav-toggle" id="navToggle" onclick="document.getElementById('navLinks').classList.toggle('show')">
@@ -766,6 +819,96 @@
   </div>
 </section>
 
+<!-- ═══════════ WORK SHOWCASE ═══════════ -->
+<section id="work-showcase" class="alt-bg">
+  <div class="reveal">
+    <div class="section-label">Portfolio</div>
+    <h2 class="section-title">Work Showcase</h2>
+    <p class="section-subtitle">A selection of e-learning courses I've designed and developed — click to explore each one.</p>
+  </div>
+  <div class="reveal">
+    <div class="showcase-carousel-wrapper">
+      <div class="showcase-track" id="showcaseTrack">
+
+        <!-- Slide 1 -->
+        <div class="showcase-slide">
+          <div class="showcase-card">
+            <div class="showcase-img-wrap">
+              <img src="images/collage1.jpg" alt="Best Practices for Customer Care course preview" />
+              <div class="showcase-img-overlay"></div>
+            </div>
+            <div class="showcase-body">
+              <div class="showcase-meta">
+                <div class="showcase-num">01</div>
+                <div class="showcase-type">E-Learning Course</div>
+                <h3 class="showcase-title">Best Practices for Customer Care</h3>
+              </div>
+              <a href="https://360.articulate.com/review/content/f6ba8c6e-5d60-49e2-a479-d04c15244cda/review" target="_blank" rel="noopener noreferrer" class="showcase-view-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Course
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="showcase-slide">
+          <div class="showcase-card">
+            <div class="showcase-img-wrap">
+              <img src="images/collage2.jpg" alt="Client Data Protection course preview" />
+              <div class="showcase-img-overlay"></div>
+            </div>
+            <div class="showcase-body">
+              <div class="showcase-meta">
+                <div class="showcase-num">02</div>
+                <div class="showcase-type">E-Learning Course</div>
+                <h3 class="showcase-title">Client Data Protection</h3>
+              </div>
+              <a href="https://360.articulate.com/review/content/e2fef490-6eaa-4eef-8865-2bb9f1e7320d/review" target="_blank" rel="noopener noreferrer" class="showcase-view-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Course
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="showcase-slide">
+          <div class="showcase-card">
+            <div class="showcase-img-wrap">
+              <img src="images/collage3.jpg" alt="Diversity and Inclusion course preview" />
+              <div class="showcase-img-overlay"></div>
+            </div>
+            <div class="showcase-body">
+              <div class="showcase-meta">
+                <div class="showcase-num">03</div>
+                <div class="showcase-type">E-Learning Course</div>
+                <h3 class="showcase-title">Diversity and Inclusion</h3>
+              </div>
+              <a href="https://360.articulate.com/review/content/d55dc834-d574-49f2-b6b8-f35b961dec95/review" target="_blank" rel="noopener noreferrer" class="showcase-view-btn">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                View Course
+              </a>
+            </div>
+          </div>
+        </div>
+
+      </div><!-- /track -->
+    </div><!-- /wrapper -->
+
+    <div class="carousel-controls">
+      <button class="carousel-btn" id="showcasePrev" onclick="showcaseMove(-1)" aria-label="Previous slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"/></svg>
+      </button>
+      <div class="carousel-dots" id="showcaseDots"></div>
+      <button class="carousel-btn" id="showcaseNext" onclick="showcaseMove(1)" aria-label="Next slide">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"/></svg>
+      </button>
+      <span class="carousel-counter" id="showcaseCounter">1 / 3</span>
+    </div>
+  </div>
+</section>
+
 <!-- ═══════════ FOOTER ═══════════ -->
 <footer id="contact">
   <div class="footer-cta">
@@ -848,6 +991,47 @@
     document.body.style.overflow = '';
   }
   document.addEventListener('keydown', e => { if (e.key === 'Escape') closeContactModal(); });
+
+  // Work Showcase Carousel
+  (function() {
+    const total = 3;
+    let cur = 0;
+    const track = document.getElementById('showcaseTrack');
+    const dotsContainer = document.getElementById('showcaseDots');
+    const counter = document.getElementById('showcaseCounter');
+    const prevBtn = document.getElementById('showcasePrev');
+    const nextBtn = document.getElementById('showcaseNext');
+
+    // Build dots
+    for (let i = 0; i < total; i++) {
+      const d = document.createElement('button');
+      d.className = 'carousel-dot' + (i === 0 ? ' active' : '');
+      d.setAttribute('aria-label', 'Go to slide ' + (i + 1));
+      d.addEventListener('click', () => goTo(i));
+      dotsContainer.appendChild(d);
+    }
+
+    function goTo(n) {
+      cur = (n + total) % total;
+      track.style.transform = 'translateX(-' + (cur * 100) + '%)';
+      dotsContainer.querySelectorAll('.carousel-dot').forEach((d, i) => d.classList.toggle('active', i === cur));
+      counter.textContent = (cur + 1) + ' / ' + total;
+      prevBtn.disabled = cur === 0;
+      nextBtn.disabled = cur === total - 1;
+    }
+
+    window.showcaseMove = function(dir) { goTo(cur + dir); };
+
+    // Touch/swipe support
+    let startX = 0;
+    track.addEventListener('touchstart', e => { startX = e.touches[0].clientX; }, { passive: true });
+    track.addEventListener('touchend', e => {
+      const dx = e.changedTouches[0].clientX - startX;
+      if (Math.abs(dx) > 50) goTo(cur + (dx < 0 ? 1 : -1));
+    });
+
+    goTo(0);
+  })();
 </script>
 </body>
 </html>
